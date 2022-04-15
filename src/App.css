@@ -1,5 +1,12 @@
+
+:root {
+  --opacity: 0.93;
+}
+
 .App {
-  text-align: center;
+  text-align: left;
+  color: #fff;
+  font-size: 36px;
 }
 
 .App-logo {
@@ -13,26 +20,65 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+button {
+  color: #fff;
+  transition: 0.5s;
+}
+button:hover, button:focus {
+  border-color: #fff;
+  color: #fff;
 }
 
-.App-link {
-  color: #61dafb;
+.raise:hover,
+.raise:focus {
+  box-shadow: 0.2em 0.2em 0.2em -0.2em #fff;
+  transform: translateY(-0.25em) translateX(-0.05em);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+button {
+  background: none;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  margin: 0.35em;
+  padding: 0.25em 1em;
+}
+
+h1 {
+  font-weight: 400;
+}
+
+code {
+  color: #e4cb58;
+  font: inherit;
+}
+
+.response-div {
+  position: relative;
+  top: 20px;
+  visibility: visible;
+  opacity: 1;
+  transition: all .2s;
+}
+
+.response-div.off {
+  visibility: hidden;
+  opacity: 0;
+  transition: all .2s;
+}
+
+
+
+.overlay {
+  z-index: -10;
+  background: #001933;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  object-fit: fill;
+  opacity: var(--opacity);
 }
