@@ -19,7 +19,7 @@ programera, dizajnera, muzikant, projekt menaxhera,
 etj.
 
 Njerzt qe punojne edhe pas ores 6
-    `
+`
     
 
     return (

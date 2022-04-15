@@ -44,8 +44,7 @@ class Bulb extends React.Component {
       <div>
         <div className="pull-cord-container" onClick={this.toggleLight}>
 
-          <div className={"pull-cord" + pullCordPosition} 
-            style={{'--height': (this.state.on ? '360px': '350px')}} />
+          <div className={"pull-cord" + pullCordPosition} />
           <div className="gullumuxhi"></div>
         </div>
         <div className="container">

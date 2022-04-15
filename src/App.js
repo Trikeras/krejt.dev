@@ -127,7 +127,6 @@ class App extends React.Component {
     return [
       <div className="overlay" style={{ '--opacity': this.state.opacity}}></div>,
       (this.state.pressedO && this.state.pressedP ? comp2 : comp1)];
-    // return comp2;
   }
 
 }
