@@ -7,21 +7,21 @@ const audioLightSwitchSound = new Audio(lightSwitchSound);
 audioLightSwitchSound.load();
 
 class Bulb extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props)
     this.state = {
-      on: props.on, 
+      on: props.on,
       initialRender: true
     };
     this.toggleLight = this.toggleLight.bind(this);
   }
-    
+
   toggleLight(e) {
     audioLightSwitchSound.pause();
     audioLightSwitchSound.currentTime = 0;
-    audioLightSwitchSound.play()
-    
-    this.props.onToggle(!this.state.on)
+    audioLightSwitchSound.play();
+
+    this.props.onToggle(!this.state.on);
 
     this.setState(prevState => ({
       on: !prevState.on,
@@ -30,26 +30,26 @@ class Bulb extends React.Component {
   }
 
   render() {
-    let finalClassName = " off"
+    let finalClassName = 'off';
     if (this.state.on) {
-      finalClassName = ""
+      finalClassName = '';
     }
 
-    let pullCordPosition = ''
+    let pullCordPosition = '';
     if (!this.state.initialRender) {
-      pullCordPosition = this.state.on ? " low" : " high"
+      pullCordPosition = this.state.on ? 'low' : 'high';
     }
 
     return (
       <div>
-        <div className="pull-cord-container" onClick={this.toggleLight}>
+        <div className='pull-cord-container' onClick={this.toggleLight}>
 
-          <div className={"pull-cord" + pullCordPosition} />
-          <div className="gullumuxhi"></div>
+          <div className={`pull-cord ${pullCordPosition}`} />
+          <div className='gullumuxhi'></div>
         </div>
-        <div className="container">
-          <div className={"bulb" + finalClassName}>
-            <div className={"filaments" + finalClassName}></div>
+        <div className='container'>
+          <div className={`bulb ${finalClassName}`}>
+            <div className={`filaments ${finalClassName}`}></div>
           </div>
         </div>
       </div>);
