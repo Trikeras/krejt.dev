@@ -1,7 +1,7 @@
 import './App.css';
 
 import TypeAnimation from "./components/typing"
-import BulbComponentFunctional from "./components/bulb"
+import Bulb from "./components/bulb"
 import AboutUs from "./page/about-us"
 import React from 'react';
 
@@ -98,7 +98,7 @@ class App extends React.Component {
     let comp1 = (
       <div className="App">
         <div style={{ position: 'absolute', left: '70%', top: '3%' }}>
-          <BulbComponentFunctional on={false} onToggle={isOn => this.setOpacity(isOn)} />
+          <Bulb on={false} onToggle={isOn => this.setOpacity(isOn)} />
         </div>
 
         <div style={{ position: 'absolute', left: '20%', top: '45%' }}

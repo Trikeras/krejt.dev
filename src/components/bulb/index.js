@@ -6,7 +6,7 @@ import lightSwitchSound from '../../assets/light-pull2.mp3'
 const audioLightSwitchSound = new Audio(lightSwitchSound);
 audioLightSwitchSound.load();
 
-const BulbComponentFunctional = () => {
+const Bulb = () => {
 
   const [on, setOn] = useState(false);
   const [finalClassName, setFinalClassName] = useState('off');
@@ -40,4 +40,4 @@ const BulbComponentFunctional = () => {
   </div>);
 }
 
-export default BulbComponentFunctional;
+export default Bulb;
