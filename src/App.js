@@ -12,7 +12,7 @@ class App extends React.Component {
     super(props);
     this.typingtext = React.createRef();
     this.state = {
-      isTextHovered: false, 
+      isTextHovered: false,
       isButtonHovered: false,
       opacity: 0.9,
       solved: false,
@@ -25,7 +25,7 @@ class App extends React.Component {
     this.waitOnHover = this.waitOnHover.bind(this);
     this.setOpacity = this.setOpacity.bind(this);
   }
-  
+
   setKeyPressed(key) {
     if (key === "P") {
       this.setState(() => ({
@@ -39,19 +39,19 @@ class App extends React.Component {
     }
   }
 
-  componentDidMount(){
+  componentDidMount() {
     const keyPress = this.setKeyPressed
     document.addEventListener('keyup', function (event) {
-        if (event.key.toUpperCase() == "P"){
-          keyPress("P");
-        }
-        if (event.key.toUpperCase() == "O"){
-          keyPress("O");
-        }
+      if (event.key.toUpperCase() == "P") {
+        keyPress("P");
+      }
+      if (event.key.toUpperCase() == "O") {
+        keyPress("O");
+      }
     })
   }
 
-  
+
   setIsTextHovered(isTextHovered) {
     let delay = isTextHovered ? 150 : 2000
 
@@ -69,7 +69,7 @@ class App extends React.Component {
 
     setTimeout(() => {
       console.log("STATE BUTTON " + isButtonHovered)
-      this.state.isButtonHovered=isButtonHovered
+      this.state.isButtonHovered = isButtonHovered
       this.setState(prevState => ({
         isButtonHovered: isButtonHovered
       }));
@@ -82,14 +82,14 @@ class App extends React.Component {
         if (this.state.isTextHovered === false &&
           this.state.isButtonHovered == false) {
           resolve("")
-        }        
+        }
       }, 50);
     })
   }
 
 
   setOpacity(isOn) {
-    this.setState(() =>({
+    this.setState(() => ({
       opacity: (isOn ? 0.75 : 0.93)
     }))
   }
@@ -98,26 +98,26 @@ class App extends React.Component {
     let comp1 = (
       <div className="App">
         <div style={{ position: 'absolute', left: '70%', top: '3%' }}>
-          <Bulb on={false} onToggle={isOn=>this.setOpacity(isOn)}/>
+          <Bulb onToggle={isOn => this.setOpacity(isOn)} />
         </div>
-        
-        <div style={{ position: 'absolute', left: '20%', top: '45%' }} 
+
+        <div style={{ position: 'absolute', left: '20%', top: '45%' }}
           onMouseEnter={() => this.setIsTextHovered(true)}
           onMouseLeave={() => this.setIsTextHovered(false)}>
-            
-            <TypeAnimation
-              cursor={true}
-              sequence={getQuestions(this.waitOnHover)}
-              wrapper="a"
-              repeat={Infinity}
-            />
 
-            <div className={'response-div' + (this.state.isButtonHovered || this.state.isTextHovered ? "": " off")}
-                  onMouseEnter={() => this.setAreButtonsHovered(true)}
-                  onMouseLeave={() => this.setAreButtonsHovered(false)}>
-              <button className='raise'>Po</button>
-              <button className='raise'>Jo</button>
-            </div>
+          <TypeAnimation
+            cursor={true}
+            sequence={getQuestions(this.waitOnHover)}
+            wrapper="a"
+            repeat={Infinity}
+          />
+
+          <div className={'response-div' + (this.state.isButtonHovered || this.state.isTextHovered ? "" : " off")}
+            onMouseEnter={() => this.setAreButtonsHovered(true)}
+            onMouseLeave={() => this.setAreButtonsHovered(false)}>
+            <button className='raise'>Po</button>
+            <button className='raise'>Jo</button>
+          </div>
 
         </div>
       </div>);
@@ -125,7 +125,7 @@ class App extends React.Component {
     let comp2 = (
       <AboutUs />);
     return [
-      <div className="overlay" style={{ '--opacity': this.state.opacity}}></div>,
+      <div className="overlay" style={{ '--opacity': this.state.opacity }}></div>,
       (this.state.pressedO && this.state.pressedP ? comp2 : comp1)];
   }
 

@@ -1,8 +1,8 @@
 
-export function getQuestions(callback){
+export function getQuestions(callback) {
     return [
-        'A je zhvillues?', 
-        2000, 
+        'A je zhvillues?',
+        2000,
         callback,
         'A je projekt menaxher?',
         2300,
@@ -19,7 +19,7 @@ export function getQuestions(callback){
         'A je administrator sistemesh?',
         1700,
         callback,
-        'A je inxhinjer i rrjetave?',
+        'A je inxhinier i rrjetave?',
         1300,
         callback,
         'A je zhvillues lojrash?',
