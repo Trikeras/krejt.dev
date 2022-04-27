@@ -3,6 +3,12 @@
   --opacity: 0.93;
 }
 
+#type-animation {
+  position: absolute;
+  left: 20%;
+  top: 45%;
+}
+
 .App {
   text-align: left;
   color: #fff;
@@ -81,4 +87,12 @@ code {
   overflow: hidden;
   object-fit: fill;
   opacity: var(--opacity);
+}
+
+@media screen and (max-width:768px) {
+  #type-animation {
+    position: absolute;
+    left: 20%;
+    top: 65%;
+  }
 }

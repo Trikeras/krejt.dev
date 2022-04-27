@@ -101,17 +101,15 @@ class App extends React.Component {
           <Bulb onToggle={isOn => this.setOpacity(isOn)} />
         </div>
 
-        <div style={{ position: 'absolute', left: '20%', top: '45%' }}
+        <div id="type-animation"
           onMouseEnter={() => this.setIsTextHovered(true)}
           onMouseLeave={() => this.setIsTextHovered(false)}>
-
           <TypeAnimation
             cursor={true}
             sequence={getQuestions(this.waitOnHover)}
             wrapper="a"
             repeat={Infinity}
           />
-
           <div className={'response-div' + (this.state.isButtonHovered || this.state.isTextHovered ? "" : " off")}
             onMouseEnter={() => this.setAreButtonsHovered(true)}
             onMouseLeave={() => this.setAreButtonsHovered(false)}>
