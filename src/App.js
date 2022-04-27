@@ -6,6 +6,8 @@ import AboutUs from "./page/about-us"
 import React from 'react';
 
 import { getQuestions } from "./utils/questions"
+import { isMobile } from 'react-device-detect';
+
 class App extends React.Component {
 
   constructor(props) {
@@ -101,7 +103,7 @@ class App extends React.Component {
           <Bulb onToggle={isOn => this.setOpacity(isOn)} />
         </div>
 
-        <div id="type-animation"
+        <div id={isMobile ? 'mobile-type-animation' : 'type-animation'}
           onMouseEnter={() => this.setIsTextHovered(true)}
           onMouseLeave={() => this.setIsTextHovered(false)}>
           <TypeAnimation
@@ -110,12 +112,14 @@ class App extends React.Component {
             wrapper="a"
             repeat={Infinity}
           />
-          <div className={'response-div' + (this.state.isButtonHovered || this.state.isTextHovered ? "" : " off")}
-            onMouseEnter={() => this.setAreButtonsHovered(true)}
-            onMouseLeave={() => this.setAreButtonsHovered(false)}>
-            <button className='raise'>Po</button>
-            <button className='raise'>Jo</button>
-          </div>
+          {isMobile &&
+            <div className={'response-div' + (this.state.isButtonHovered || this.state.isTextHovered ? "" : " off")}
+              onMouseEnter={() => this.setAreButtonsHovered(true)}
+              onMouseLeave={() => this.setAreButtonsHovered(false)}>
+              <button className='raise'>Po</button>
+              <button className='raise'>Jo</button>
+            </div>
+          }
 
         </div>
       </div>);
