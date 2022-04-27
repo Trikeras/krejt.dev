@@ -6,24 +6,28 @@ import lightSwitchSound from '../../assets/light-pull2.mp3'
 const audioLightSwitchSound = new Audio(lightSwitchSound);
 audioLightSwitchSound.load();
 
-const Bulb = () => {
+const Bulb = (props) => {
 
-  const [on, setOn] = useState(false);
+  const [isOn, setIsOn] = useState(false);
   const [finalClassName, setFinalClassName] = useState('off');
-  const [pullCordPosition, setPullCordPosition] = useState('high');
+  const [pullCordPosition, setPullCordPosition] = useState();
 
   const toggleLight = () => {
+
+    const newOnState = !isOn;
+    props.onToggle(newOnState);
+
     audioLightSwitchSound.pause();
     audioLightSwitchSound.currentTime = 0;
     audioLightSwitchSound.play();
 
-    const finalClassNameValue = on ? 'off' : '';
+    const finalClassNameValue = newOnState ? '' : 'off';
     setFinalClassName(finalClassNameValue);
 
-    const pullCordPositionValue = on ? 'high' : 'low';
+    const pullCordPositionValue = newOnState ? 'low' : 'high';
     setPullCordPosition(pullCordPositionValue);
 
-    setOn(!on);
+    setIsOn(newOnState);
   }
 
   return (<div>
@@ -40,4 +44,4 @@ const Bulb = () => {
   </div>);
 }
 
-export default Bulb;
+export default React.memo(Bulb, () => true)

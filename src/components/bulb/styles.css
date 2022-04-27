@@ -127,7 +127,7 @@
   }
 }
 
-@keyframes pull-animation-high {
+@keyframes pull-animation-low {
   0% {
     height: 350px;
   }
@@ -142,7 +142,7 @@
 
 }
 
-@keyframes pull-animation-low {
+@keyframes pull-animation-high {
   0% {
     height: 370px;
   }
@@ -212,7 +212,7 @@
   content: "";
   width: 7px;
   
-  height: 370px;
+  height: 350px;
   background: rgba(43, 43, 43, 0.6);
   top: 0px;
   z-index: -2;

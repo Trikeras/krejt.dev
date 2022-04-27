@@ -98,7 +98,7 @@ class App extends React.Component {
     let comp1 = (
       <div className="App">
         <div style={{ position: 'absolute', left: '70%', top: '3%' }}>
-          <Bulb on={false} onToggle={isOn => this.setOpacity(isOn)} />
+          <Bulb onToggle={isOn => this.setOpacity(isOn)} />
         </div>
 
         <div style={{ position: 'absolute', left: '20%', top: '45%' }}
