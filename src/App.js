@@ -20,12 +20,15 @@ class App extends React.Component {
       solved: false,
       pressedP: false,
       pressedO: false,
+      isJoClicked: false
     };
     this.setIsTextHovered = this.setIsTextHovered.bind(this);
     this.setAreButtonsHovered = this.setAreButtonsHovered.bind(this);
     this.setKeyPressed = this.setKeyPressed.bind(this);
     this.waitOnHover = this.waitOnHover.bind(this);
     this.setOpacity = this.setOpacity.bind(this);
+    this.onPoClick = this.onPoClick.bind(this);
+    this.onJoClick = this.onJoClick.bind(this);
   }
 
   setKeyPressed(key) {
@@ -96,6 +99,21 @@ class App extends React.Component {
     }))
   }
 
+  onPoClick() {
+    this.setState(() => ({
+      pressedP: true
+    }))
+    this.setState(() => ({
+      pressedO: true
+    }))
+  }
+
+  onJoClick() {
+    this.setState(() => ({
+      isJoClicked: true
+    }))
+  }
+
   render() {
     let comp1 = (
       <div className="App">
@@ -116,8 +134,8 @@ class App extends React.Component {
             <div className={'response-div' + (this.state.isButtonHovered || this.state.isTextHovered ? "" : " off")}
               onMouseEnter={() => this.setAreButtonsHovered(true)}
               onMouseLeave={() => this.setAreButtonsHovered(false)}>
-              <button className='raise'>Po</button>
-              <button className='raise'>Jo</button>
+              <button className='raise' hidden={this.state.isJoClicked} onClick={this.onPoClick}>Po</button>
+              <button className='raise' hidden={this.state.isJoClicked} onClick={this.onJoClick}>Jo</button>
             </div>
           }
 
