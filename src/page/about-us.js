@@ -20,6 +20,12 @@ Qellimi i krejt neve eshte qe te nxitet bashkepunimi, krejt kjo duke e lehtesu k
 Krejt do te kemi slack channels per cfardo lemi qe na intereson si per shembull: java, nodejs, kubernetes, react, javacsript, business, events, applications, design dhe cfardoe tjeter qe do te na lehtesonte komunikimin kshtuqe edhe bashkepunimin mes nesh.
 
 Njerzt qe punojne edhe pas ores 6
+**Krejt.dev** eshte komunitet per krejt zhvilluesit: programera, dizajnera, muzikant, projekt menaxhera etj.
+
+Qellimi i krejt neve eshte qe te nxitet bashkepunimi, krejt kjo duke e lehtesu komunikimin mes krejtve.
+Krejt do te kemi slack channels per cfardo lemi qe na intereson si per shembull: java, nodejs, kubernetes, react, javacsript, business, events, applications, design dhe cfardoe tjeter qe do te na lehtesonte komunikimin kshtuqe edhe bashkepunimin mes nesh.
+
+Njerzt qe punojne edhe pas ores 6
 `;
 
 
