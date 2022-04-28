@@ -1,8 +1,7 @@
 
 .messageBox {
-  width: 60vw; /*optional*/
+  width: 90vw;
   max-width: 500px;
-  height: 60vh;
   margin: 20vh auto;
   background-color: #272B30;
   padding: 10px 30px;
