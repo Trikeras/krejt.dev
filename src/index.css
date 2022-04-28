@@ -20,9 +20,18 @@ body {
     background-position: left;
     background-repeat: no-repeat;
     background-size: cover;
+
+    /*hide unwanted white space at the bottom of the page*/
+    overflow-y: hidden;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+@media screen and (max-width:768px){
+  body {
+    background-image: url("assets/room-mobile.png");
+  }
 }

@@ -3,6 +3,18 @@
   --opacity: 0.93;
 }
 
+#type-animation {
+  position: absolute;
+  left: 20%;
+  top: 45%;
+}
+
+#mobile-type-animation {
+  position: absolute;
+  left: 20%;
+  top: 65%;
+}
+
 .App {
   text-align: left;
   color: #fff;
