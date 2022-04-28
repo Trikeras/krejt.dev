@@ -18,3 +18,21 @@
 pre {
   white-space: pre-wrap;
 }
+
+/* Scrollbar */
+.messageBox::-webkit-scrollbar {
+  height: var(--scrollbar-size);
+  width: var(--scrollbar-size);
+}
+.messageBox::-webkit-scrollbar-track {
+  background-color: var(--scrollbar-track-color);
+}
+.messageBox::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-color);
+}
+.messageBox::-webkit-scrollbar-thumb:vertical {
+  min-height: var(--scrollbar-minlength);
+}
+.messageBox::-webkit-scrollbar-thumb:horizontal {
+  min-width: var(--scrollbar-minlength);
+}

@@ -23,6 +23,16 @@ body {
 
     /*hide unwanted white space at the bottom of the page*/
     overflow-y: hidden;
+
+  /* Scrollbar */
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+
+  --scrollbar-track-color: transparent;
+  --scrollbar-color: rgba(0,0,0,.2);
+
+  --scrollbar-size: .375rem;
+  --scrollbar-minlength: 1.5rem;
 }
 
 code {
