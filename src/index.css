@@ -21,6 +21,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 
+    /* added something*/
     /*hide unwanted white space at the bottom of the page*/
     overflow-y: hidden;
 }
