@@ -36,3 +36,9 @@ pre {
 .messageBox::-webkit-scrollbar-thumb:horizontal {
   min-width: var(--scrollbar-minlength);
 }
+
+@media screen and (max-width:768px){
+  .messageBox {
+    margin-top: 7vh;
+  }
+}
