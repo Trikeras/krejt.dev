@@ -1,8 +1,12 @@
+.messageBoxWrapper {
+  overflow-y: hidden;
+}
 
 .messageBox {
   width: 90vw;
   max-width: 500px;
-  margin: 10vh auto;
+  margin: 0 auto;
+  margin-top: 10vh;
   background-color: #272B30;
   padding: 10px 30px;
   color: #f5f5f5;
@@ -13,4 +17,28 @@
 
 pre {
   white-space: pre-wrap;
+}
+
+/* Scrollbar */
+.messageBox::-webkit-scrollbar {
+  height: var(--scrollbar-size);
+  width: var(--scrollbar-size);
+}
+.messageBox::-webkit-scrollbar-track {
+  background-color: var(--scrollbar-track-color);
+}
+.messageBox::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-color);
+}
+.messageBox::-webkit-scrollbar-thumb:vertical {
+  min-height: var(--scrollbar-minlength);
+}
+.messageBox::-webkit-scrollbar-thumb:horizontal {
+  min-width: var(--scrollbar-minlength);
+}
+
+@media screen and (max-width:768px){
+  .messageBox {
+    margin-top: 7vh;
+  }
 }
