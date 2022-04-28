@@ -2,7 +2,7 @@
   "name": "krejtdev",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://page.krejt.dev",
+  "homepage": "https://krejt.dev",
   "dependencies": {
     "@camwiegert/typical": "^0.1.1",
     "@testing-library/jest-dom": "^5.16.4",
