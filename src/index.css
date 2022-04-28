@@ -20,6 +20,9 @@ body {
     background-position: left;
     background-repeat: no-repeat;
     background-size: cover;
+
+    /*hide unwanted white space at the bottom of the page*/
+    overflow-y: hidden;
 }
 
 code {
