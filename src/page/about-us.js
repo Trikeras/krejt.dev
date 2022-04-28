@@ -30,8 +30,10 @@ Njerzt qe punojne edhe pas ores 6
 
 
     return (
-      <div className='messageBox'>
-        <ReactMarkdown children={markdown} />
+      <div className='messageBoxWrapper'>
+        <div className='messageBox'>
+          <ReactMarkdown children={markdown} />
+        </div>
       </div>
     );
   }

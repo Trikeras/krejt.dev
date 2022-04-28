@@ -1,8 +1,12 @@
+.messageBoxWrapper {
+  overflow-y: hidden;
+}
 
 .messageBox {
   width: 90vw;
   max-width: 500px;
-  margin: 10vh auto;
+  margin: 0 auto;
+  margin-top: 10vh;
   background-color: #272B30;
   padding: 10px 30px;
   color: #f5f5f5;
