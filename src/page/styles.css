@@ -1,10 +1,11 @@
+
 .messageBoxWrapper {
   overflow-y: hidden;
 }
 
 .messageBox {
   width: 90vw;
-  max-width: 500px;
+  max-width: 600px;
   margin: 0 auto;
   margin-top: 10vh;
   background-color: #272B30;
@@ -40,5 +41,10 @@ pre {
 @media screen and (max-width:768px){
   .messageBox {
     margin-top: 7vh;
+    max-width: 500px;
   }
+}
+
+p a {
+  color: mediumslateblue;
 }
