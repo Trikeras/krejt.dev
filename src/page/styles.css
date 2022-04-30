@@ -38,7 +38,7 @@ pre {
   min-width: var(--scrollbar-minlength);
 }
 
-@media screen and (max-width:768px){
+@media screen and (max-width:550px){
   .messageBox {
     margin-top: 7vh;
     max-width: 500px;
