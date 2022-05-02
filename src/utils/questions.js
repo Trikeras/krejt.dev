@@ -10,7 +10,7 @@ export function getQuestions(callback) {
         'A je dizajner?',
         1800,
         callback,
-        'A ben muzike ti?',
+        'A bene muzike ti?',
         2400,
         callback,
         'A je tester softuerik?',
