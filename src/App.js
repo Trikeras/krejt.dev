@@ -15,7 +15,6 @@ class App extends React.Component {
     this.typingtext = React.createRef();
     this.state = {
       isTextHovered: false,
-      isButtonHovered: false,
       opacity: 0.9,
       solved: false,
       pressedP: false,
@@ -23,7 +22,6 @@ class App extends React.Component {
       isJoClicked: false
     };
     this.setIsTextHovered = this.setIsTextHovered.bind(this);
-    this.setAreButtonsHovered = this.setAreButtonsHovered.bind(this);
     this.setKeyPressed = this.setKeyPressed.bind(this);
     this.waitOnHover = this.waitOnHover.bind(this);
     this.setOpacity = this.setOpacity.bind(this);
@@ -56,42 +54,21 @@ class App extends React.Component {
     })
   }
 
-
-  setIsTextHovered(isTextHovered) {
-    let delay = isTextHovered ? 150 : 2000
-
-    setTimeout(() => {
-      console.log("STATE Text " + isTextHovered)
-      //this.state.isTextHovered = isTextHovered;
-      this.setState(prevState => ({
-        isTextHovered: isTextHovered
-      }));
-    }, delay);
-  }
-
-  setAreButtonsHovered(isButtonHovered) {
-    let delay = isButtonHovered ? 150 : 2000
-
-    setTimeout(() => {
-      console.log("STATE BUTTON " + isButtonHovered)
-      this.state.isButtonHovered = isButtonHovered
-      this.setState(prevState => ({
-        isButtonHovered: isButtonHovered
-      }));
-    }, delay);
+  setIsTextHovered() {
+    this.setState(prevState => ({
+      isTextHovered: true
+    }));
   }
 
   waitOnHover() {
     return new Promise((resolve, reject) => {
       setInterval(() => {
-        if (this.state.isTextHovered === false &&
-          this.state.isButtonHovered == false) {
+        if (this.state.isTextHovered === false) {
           resolve("")
         }
       }, 50);
     })
   }
-
 
   setOpacity(isOn) {
     this.setState(() => ({
@@ -110,8 +87,12 @@ class App extends React.Component {
 
   onJoClick() {
     this.setState(() => ({
-      isJoClicked: true
+      isJoClicked: false
     }))
+
+    this.setState(prevState => ({
+      isTextHovered: false
+    }));
   }
 
   render() {
@@ -121,19 +102,17 @@ class App extends React.Component {
           <Bulb onToggle={isOn => this.setOpacity(isOn)} />
         </div>
 
-        <div id={isMobile ? 'mobile-type-animation' : 'type-animation'}
-          onMouseEnter={() => this.setIsTextHovered(true)}
-          onMouseLeave={() => this.setIsTextHovered(false)}>
-          <TypeAnimation
-            cursor={true}
-            sequence={getQuestions(this.waitOnHover)}
-            wrapper="a"
-            repeat={Infinity}
-          />
+        <div id={isMobile ? 'mobile-type-animation' : 'type-animation'}>
+          <div onMouseEnter={(e) => this.setIsTextHovered()}>
+            <TypeAnimation
+              cursor={true}
+              sequence={getQuestions(this.waitOnHover)}
+              wrapper="a"
+              repeat={Infinity}
+            />
+          </div>
           {isMobile &&
-            <div className={'response-div' + (this.state.isButtonHovered || this.state.isTextHovered ? "" : " off")}
-              onMouseEnter={() => this.setAreButtonsHovered(true)}
-              onMouseLeave={() => this.setAreButtonsHovered(false)}>
+            <div className={'response-div' + (this.state.isTextHovered ? "" : " off")}>
               <button className='raise' hidden={this.state.isJoClicked} onClick={this.onPoClick}>Po</button>
               <button className='raise' hidden={this.state.isJoClicked} onClick={this.onJoClick}>Jo</button>
             </div>
