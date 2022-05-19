@@ -35,7 +35,7 @@ Nese **Krejt.dev** behet komuniteti qe nderlidhe te gjitha fushat, ateher kemi:
 
 Ndersa nese keni pyetje qe mund te gjeni pergjigjjet ne google, por nuk dini te perdorni ate, ose nuk dini anglishte, ky grup nuk eshte per ty -- ka grupe tjera qe jane pikenisje me e pershtatshme per ty.
 
-Komuniteti i jone ndodhet ne Slack tek krejt.slack.dev. Bashkohu duke vizituar kete link ["Merr nje ftese per krejt.slack.dev"](https://join.slack.com/t/krejt/shared_invite/zt-16lpcsiwl-nedKbfY9EFd4eGdZm22U3w)
+Komuniteti i jone ndodhet ne Slack tek krejt.slack.dev. Bashkohu duke vizituar kete link ["Merr nje ftese per krejt.slack.dev"](https://join.slack.com/t/krejt/shared_invite/zt-16lpcsiwl-SFZaa9Nf2Zx7kVRvBBSb8Q)
 `;
 
 
