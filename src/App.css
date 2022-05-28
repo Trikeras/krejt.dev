@@ -95,3 +95,20 @@ code {
   object-fit: fill;
   opacity: var(--opacity);
 }
+
+
+@media screen and (max-width:550px) and (orientation: portrait){
+  .bulb-position {
+    position: absolute;
+    left: 80%;
+    top: 3%;
+  }
+}
+
+@media screen and (min-width:550px) {
+  .bulb-position {
+    position: absolute;
+    left: 70%;
+    top: 3%;
+  }
+}
